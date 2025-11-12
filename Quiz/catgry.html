@@ -1,0 +1,198 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pakistan Armed Forces Quiz System - Categories</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="navbar">
+        <div class="container">
+            <div class="logo">
+                <!-- Developer note: Replace with actual logo -->
+                <img src="https://via.placeholder.com/150x50?text=Pakistan+Armed+Forces" alt="Pakistan Armed Forces Logo">
+            </div>
+            <div class="hamburger">
+                <div class="bar"></div>
+                <div class="bar"></div>
+                <div class="bar"></div>
+            </div>
+            <ul class="nav-links">
+                <li><a href="index.html">Home</a></li>
+                <li><a href="#categories" class="active">Categories</a></li>
+                <li><a href="#about">About</a></li>
+                <li><a href="#contact">Contact</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <!-- Category Page -->
+    <section class="category-section page active" id="category-page">
+        <div class="container">
+            <div class="breadcrumb">
+                <a href="index.html">Home</a> / <span id="category-title">Category</span>
+            </div>
+            <h2 class="section-title" id="category-heading">Category</h2>
+            <div class="subcategories-container" id="subcategories-container">
+                <!-- Subcategories will be dynamically inserted here -->
+            </div>
+        </div>
+    </section>
+
+    <!-- Subcategory Page -->
+    <section class="subcategory-section page" id="subcategory-page">
+        <div class="container">
+            <div class="breadcrumb">
+                <a href="index.html">Home</a> / 
+                <a href="#" id="subcategory-parent">Category</a> / 
+                <span id="subcategory-title">Subcategory</span>
+            </div>
+            <h2 class="section-title" id="subcategory-heading">Subcategory</h2>
+            <div class="subjects-container" id="subjects-container">
+                <!-- Subjects will be dynamically inserted here -->
+            </div>
+        </div>
+    </section>
+
+    <!-- Topic Page -->
+    <section class="topic-section page" id="topic-page">
+        <div class="container">
+            <div class="breadcrumb">
+                <a href="index.html">Home</a> / 
+                <a href="#" id="topic-category">Category</a> / 
+                <a href="#" id="topic-subcategory">Subcategory</a> / 
+                <span id="topic-title">Subject</span>
+            </div>
+            <h2 class="section-title" id="topic-heading">Subject</h2>
+            <div class="topics-container" id="topics-container">
+                <!-- Topics will be dynamically inserted here -->
+            </div>
+        </div>
+    </section>
+
+    <!-- Quiz Start Page -->
+    <section class="quiz-start-section page" id="quiz-start-page">
+        <div class="container">
+            <div class="breadcrumb">
+                <a href="index.html">Home</a> / 
+                <a href="#" id="quiz-start-category">Category</a> / 
+                <a href="#" id="quiz-start-subcategory">Subcategory</a> / 
+                <a href="#" id="quiz-start-topic">Subject</a> / 
+                <span>Quiz</span>
+            </div>
+            <h2 class="section-title" id="quiz-start-heading">Topic</h2>
+            <div class="quiz-start-container">
+                <div class="quiz-start-form">
+                    <p>There are <span id="available-questions">0</span> questions available for this topic.</p>
+                    <div class="form-group">
+                        <label for="question-count">How many questions do you want?</label>
+                        <input type="number" id="question-count" min="1" value="10">
+                        <div class="error-message" id="question-count-error"></div>
+                    </div>
+                    <button class="btn btn-primary" id="start-quiz-btn">Start Quiz</button>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Quiz Page -->
+    <section class="quiz-section page" id="quiz-page">
+        <div class="container">
+            <div class="quiz-header">
+                <h2 class="section-title" id="quiz-title">Quiz</h2>
+                <div class="quiz-progress">
+                    <span id="current-question">1</span> / <span id="total-questions">10</span>
+                </div>
+            </div>
+            <div class="progress-container">
+                <div class="progress-bar" id="quiz-progress-bar"></div>
+            </div>
+            <div class="quiz-container">
+                <div class="question" id="question-text">Question text goes here?</div>
+                <div class="options-container" id="options-container">
+                    <!-- Options will be dynamically inserted here -->
+                </div>
+                <div class="quiz-navigation">
+                    <button class="btn btn-secondary" id="prev-question-btn">Previous</button>
+                    <button class="btn btn-primary" id="next-question-btn">Next</button>
+                    <button class="btn btn-primary" id="submit-quiz-btn">Submit</button>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Result Page -->
+    <section class="result-section page" id="result-page">
+        <div class="container">
+            <h2 class="section-title">Quiz Results</h2>
+            <div class="result-container">
+                <div class="result-summary">
+                    <div class="result-item">
+                        <div class="result-label">Total Questions</div>
+                        <div class="result-value" id="result-total">0</div>
+                    </div>
+                    <div class="result-item">
+                        <div class="result-label">Correct Answers</div>
+                        <div class="result-value" id="result-correct">0</div>
+                    </div>
+                    <div class="result-item">
+                        <div class="result-label">Incorrect Answers</div>
+                        <div class="result-value" id="result-incorrect">0</div>
+                    </div>
+                    <div class="result-item">
+                        <div class="result-label">Percentage</div>
+                        <div class="result-value" id="result-percentage">0%</div>
+                    </div>
+                </div>
+                <div class="result-message" id="result-message">
+                    Keep practicing to improve your score!
+                </div>
+                <div class="result-actions">
+                    <button class="btn btn-secondary" id="retake-quiz-btn">Retake Quiz</button>
+                    <button class="btn btn-primary" id="go-home-btn">Go Home</button>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-logo">
+                    <!-- Developer note: Replace with actual logo -->
+                    <img src="https://via.placeholder.com/150x50?text=Pakistan+Armed+Forces" alt="Pakistan Armed Forces Logo">
+                </div>
+                <div class="footer-links">
+                    <h3>Quick Links</h3>
+                    <ul>
+                        <li><a href="index.html">Home</a></li>
+                        <li><a href="#categories">Categories</a></li>
+                        <li><a href="#about">About</a></li>
+                        <li><a href="#contact">Contact</a></li>
+                    </ul>
+                </div>
+                <div class="footer-contact">
+                    <h3>Contact Us</h3>
+                    <p><i class="fas fa-envelope"></i> info@pafarmedforces.gov.pk</p>
+                    <p><i class="fas fa-phone"></i> +92-XXX-XXXXXXX</p>
+                    <div class="social-icons">
+                        <a href="#"><i class="fab fa-facebook"></i></a>
+                        <a href="#"><i class="fab fa-twitter"></i></a>
+                        <a href="#"><i class="fab fa-instagram"></i></a>
+                        <a href="#"><i class="fab fa-youtube"></i></a>
+                    </div>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2023 Pakistan Armed Forces Quiz System. All Rights Reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>
